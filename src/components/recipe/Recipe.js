@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import IngredientList from "../ingredient/IngredientList";
 import {handleDeleteRecipe} from "../../functions";
+import {RecipeContext} from "../../App";
 
 
-const Recipe = ({recipe, recipes, setRecipes}) => {
+const Recipe = ({recipe}) => {
+
+    const {recipes, setRecipes} = useContext(RecipeContext);
 
     return (
         // Wrapper div - handles size of cards by column.

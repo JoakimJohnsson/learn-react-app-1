@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import Recipe from "./Recipe";
 import {handleAddRecipe} from "../../functions";
 import {v4 as uuidv4} from "uuid";
+import {RecipeContext} from "../../App";
 
 
-const RecipeList = ({recipes, setRecipes}) => {
+const RecipeList = () => {
+
+    const {recipes, setRecipes} = useContext(RecipeContext);
 
     return (
         <main className={"container-fluid p-5"}>
@@ -22,10 +25,12 @@ const RecipeList = ({recipes, setRecipes}) => {
                         </button>
                     </div>
                     <div className={"row"}>
+                        {/* This is a row. Each Recipe component renders a card wrapped in a col.
+                            The col handles size and responsive behaviour of the card. */}
                         {
                             recipes.map((recipe) => {
                                     return (
-                                        <Recipe key={uuidv4()} recipe={recipe} recipes={recipes} setRecipes={setRecipes}/>
+                                        <Recipe key={uuidv4()} recipe={recipe}/>
                                     );
                                 }
                             )
