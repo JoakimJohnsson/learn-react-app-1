@@ -1,5 +1,5 @@
 import React from "react";
-import IngredientList from "./IngredientList";
+import IngredientList from "../ingredient/IngredientList";
 
 
 const Recipe = ({recipe}) => {
@@ -11,7 +11,7 @@ const Recipe = ({recipe}) => {
             <div className={"card h-100"}>
                 <div className={"card-header"}>
                     <h2 className={"h3 card-title"}>{recipe.name}</h2>
-                    <h3 className={"h5 card-subtitle text-muted"}>{recipe.description}</h3>
+                    <h3 className={"h5 card-subtitle"}>{recipe.description}</h3>
                     <div className={"p-2"}>
                         <button className={"btn btn-sm btn-primary me-2"}>Edit</button>
                         <button className={"btn btn-sm btn-outline-danger"}>Delete</button>

@@ -1,5 +1,5 @@
 import React from "react";
-import RecipeList from "./components/RecipeList";
+import RecipeList from "./components/recipe/RecipeList";
 import {mockData} from "./components/mockData";
 
 

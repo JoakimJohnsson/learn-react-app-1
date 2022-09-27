@@ -5,7 +5,7 @@ import Recipe from "./Recipe";
 const RecipeList = ({recipes}) => {
 
     return (
-        <div className={"container-fluid p-5"}>
+        <main className={"container-fluid p-5"}>
             <div className={"row"}>
                 <div className={"col-12"}>
                     <div className={"mb-5"}>
@@ -26,7 +26,7 @@ const RecipeList = ({recipes}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 
