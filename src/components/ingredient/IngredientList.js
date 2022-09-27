@@ -1,5 +1,6 @@
 import React from "react";
 import Ingredient from "./Ingredient";
+import {v4 as uuidv4} from "uuid";
 
 
 const IngredientList = ({ingredients}) => {
@@ -8,7 +9,7 @@ const IngredientList = ({ingredients}) => {
         (ingredient) => {
             // Using spread operator here instead of ingredient={ingredient}.
             return (
-                <Ingredient key={ingredient.id} {...ingredient}/>
+                <Ingredient key={uuidv4()} {...ingredient}/>
             );
         }
     )

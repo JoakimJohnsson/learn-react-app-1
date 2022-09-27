@@ -1,8 +1,9 @@
 import React from "react";
 import IngredientList from "../ingredient/IngredientList";
+import {handleDeleteRecipe} from "../../functions";
 
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, recipes, setRecipes}) => {
 
     return (
         // Wrapper div - handles size of cards by column.
@@ -14,7 +15,12 @@ const Recipe = ({recipe}) => {
                     <h3 className={"h5 card-subtitle"}>{recipe.description}</h3>
                     <div className={"p-2"}>
                         <button className={"btn btn-sm btn-primary me-2"}>Edit</button>
-                        <button className={"btn btn-sm btn-outline-danger"}>Delete</button>
+                        <button
+                            className={"btn btn-sm btn-danger"}
+                            onClick={() => handleDeleteRecipe(recipe.id, recipes, setRecipes)}
+                        >
+                            Delete
+                        </button>
                     </div>
                 </div>
                 <div className={"card-body"}>

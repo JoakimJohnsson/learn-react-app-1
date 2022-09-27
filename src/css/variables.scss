@@ -1,3 +1,7 @@
 // Override bootstrap variables.
 $primary: #64379e;
-$danger: #630915;
+$secondary: #ad4e05;
+$danger: #8a0a1b;
+$card-border-color: $secondary;
+$card-cap-color: $primary;
+$card-cap-bg: lighten($secondary, 63%);
