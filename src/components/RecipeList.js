@@ -4,25 +4,25 @@ import Recipe from "./Recipe";
 
 const RecipeList = ({recipes}) => {
 
-    // Add logic here
-
     return (
         <div className={"container-fluid p-5"}>
             <div className={"row"}>
                 <div className={"col-12"}>
-                    <h1>Cooking with react!</h1>
-                    <p className={"lead"}>
-                        A great cooking app!
-                    </p>
+                    <div className={"mb-5"}>
+                        <h1 className={"display-1"}>Cooking with react!</h1>
+                        <p className={"lead"}>With a great cooking app...</p>
+                        <p>...comes great responsibility.</p>
+                        <button className={"btn btn-primary"}>Add new recipe</button>
+                    </div>
                     <div className={"row"}>
-                    {
-                        recipes.map((recipe) => {
-                                return (
-                                    <Recipe key={recipe.id} recipe={recipe}/>
-                                )
-                            }
-                        )
-                    }
+                        {
+                            recipes.map((recipe) => {
+                                    return (
+                                        <Recipe key={recipe.id} recipe={recipe}/>
+                                    );
+                                }
+                            )
+                        }
                     </div>
                 </div>
             </div>
