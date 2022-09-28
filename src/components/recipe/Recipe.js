@@ -1,12 +1,15 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import IngredientList from "../ingredient/IngredientList";
 import {handleDeleteRecipe} from "../../functions";
 import {RecipeContext} from "../../App";
+import RecipeEdit from "./RecipeEdit";
 
 
 const Recipe = ({recipe}) => {
 
     const {recipes, setRecipes} = useContext(RecipeContext);
+    const [showModal, setShowModal] = useState(false);
+    const modalId = "modal-" + recipe.id;
 
     return (
         // Wrapper div - handles size of cards by column.
@@ -17,7 +20,15 @@ const Recipe = ({recipe}) => {
                     <h2 className={"h3 card-title"}>{recipe.name}</h2>
                     <h3 className={"h5 card-subtitle"}>{recipe.description}</h3>
                     <div className={"p-2"}>
-                        <button className={"btn btn-sm btn-primary me-2"}>Edit</button>
+                        <button
+                            type={"button"}
+                            className={"btn btn-sm btn-primary me-2"}
+                            data-bs-toggle={"modal"}
+                            data-bs-target={`#${modalId}`}
+                            onClick={() => setShowModal(!showModal)}
+                        >
+                            Edit
+                        </button>
                         <button
                             className={"btn btn-sm btn-danger"}
                             onClick={() => handleDeleteRecipe(recipe.id, recipes, setRecipes)}
@@ -41,6 +52,8 @@ const Recipe = ({recipe}) => {
                         )}
                     </ol>
                 </div>
+                {/* Modal to edit the recipe */}
+                <RecipeEdit modalId={modalId} showModal={showModal} setShowModal={setShowModal} recipe={recipe}/>
             </div>
         </div>
     );
