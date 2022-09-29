@@ -1,5 +1,7 @@
 import React from "react";
 import {Modal} from "react-bootstrap";
+import IngredientEdit from "./IngredientEdit";
+import InstructionEdit from "./InstructionEdit";
 
 
 const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
@@ -31,31 +33,14 @@ const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
                     <label className={"form-label"} htmlFor={"servings"}>Servings:</label>
                     <input className={"form-control"} type={"number"} min={"1"} name={"servings"}/>
                     <label className={"form-label"}>Instructions:</label>
-                    <div className={"row"}>
-                        <div className={"col-12 col-sm-8"}>
-                            Input instruction
-                        </div>
-                        <div className={"col-12 col-sm-4 text-end"}>
-                            <button className={"btn btn-sm btn-outline-danger"}>&times; Delete</button>
-                        </div>
-                    </div>
+                    <InstructionEdit/>
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
                             <button className={"btn btn-sm btn-outline-primary"}>+ Add</button>
                         </div>
                     </div>
                     <label className={"form-label"}>Ingredients:</label>
-                    <div className={"row"}>
-                        <div className={"col-12 col-sm-4"}>
-                            Input name
-                        </div>
-                        <div className={"col-12 col-sm-4"}>
-                            Input amount
-                        </div>
-                        <div className={"col-12 col-sm-4 text-end"}>
-                            <button className={"btn btn-sm btn-outline-danger"}>&times; Delete</button>
-                        </div>
-                    </div>
+                    <IngredientEdit/>
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
                             <button className={"btn btn-sm btn-outline-primary"}>+ Add</button>

@@ -1,8 +1,9 @@
 import React, {useContext, useState} from "react";
-import IngredientList from "../ingredient/IngredientList";
+import IngredientList from "./IngredientList";
 import {handleDeleteRecipe} from "../../functions";
 import {RecipeContext} from "../../App";
 import RecipeEdit from "./RecipeEdit";
+import InstructionList from "./InstructionList";
 
 
 const Recipe = ({recipe}) => {
@@ -43,14 +44,7 @@ const Recipe = ({recipe}) => {
                     <p className={"h5"}>Ingredients:</p>
                     <IngredientList ingredients={recipe.ingredients}/>
                     <p className={"h5"}>Instructions:</p>
-                    <ol className={"list-group list-group-flush list-group-numbered mb-4"}>
-                        {recipe.instructions.map((instruction, index) => {
-                                return (
-                                    <li className={"list-group-item"} key={index}>{instruction}</li>
-                                );
-                            }
-                        )}
-                    </ol>
+                    <InstructionList instructions={recipe.instructions}/>
                 </div>
                 {/* Modal to edit the recipe */}
                 <RecipeEdit modalId={modalId} showModal={showModal} setShowModal={setShowModal} recipe={recipe}/>
