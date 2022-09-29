@@ -1,3 +1,12 @@
 // Variables needs to be imported before bootstrap in order to override variables.
 @import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+.form-control,
+form .row {
+  @extend .mb-3;
+}
+
+.form-label {
+  @extend .fw-bold;
+}
