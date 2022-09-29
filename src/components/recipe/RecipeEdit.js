@@ -34,16 +34,19 @@ const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
                     <input className={"form-control"} type={"number"} min={"1"} name={"servings"}/>
                     <label className={"form-label"}>Instructions:</label>
                     <InstructionEdit/>
+                    <InstructionEdit/>
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
-                            <button className={"btn btn-sm btn-outline-primary"}>+ Add</button>
+                            <button className={"btn btn-sm btn-primary"}>+ Add</button>
                         </div>
                     </div>
                     <label className={"form-label"}>Ingredients:</label>
                     <IngredientEdit/>
+                    <IngredientEdit/>
+                    <IngredientEdit/>
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
-                            <button className={"btn btn-sm btn-outline-primary"}>+ Add</button>
+                            <button className={"btn btn-sm btn-primary"}>+ Add</button>
                         </div>
                     </div>
                 </form>

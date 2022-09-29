@@ -6,10 +6,10 @@ const IngredientEdit = () => {
     return (
         <div className={"row"}>
             <div className={"col-12 col-sm-4"}>
-                Input name
+                <input className={"form-control"} type={"text"}/>
             </div>
             <div className={"col-12 col-sm-4"}>
-                Input amount
+                <input className={"form-control"} type={"text"}/>
             </div>
             <div className={"col-12 col-sm-4 text-end"}>
                 <button className={"btn btn-sm btn-outline-danger"}>&times; Delete</button>
