@@ -27,11 +27,11 @@ const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
                 <p className={"lead"}>{recipe.description}</p>
                 <form>
                     <label className={"form-label"} htmlFor={"name"}>Name:</label>
-                    <input className={"form-control"} type={"text"} name={"name"}/>
+                    <input className={"form-control mb-3"} type={"text"} name={"name"} value={recipe.name}/>
                     <label className={"form-label"} htmlFor={"cookingTime"}>Cooking time:</label>
-                    <input className={"form-control"} type={"text"} name={"cookingTime"}/>
+                    <input className={"form-control mb-3"} type={"text"} name={"cookingTime"} value={recipe.cookingTime}/>
                     <label className={"form-label"} htmlFor={"servings"}>Servings:</label>
-                    <input className={"form-control"} type={"number"} min={"1"} name={"servings"}/>
+                    <input className={"form-control mb-3"} type={"number"} min={"1"} name={"servings"} value={recipe.servings}/>
                     <label className={"form-label"}>Instructions:</label>
                     <InstructionEdit/>
                     <InstructionEdit/>
@@ -41,9 +41,9 @@ const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
                         </div>
                     </div>
                     <label className={"form-label"}>Ingredients:</label>
-                    <IngredientEdit/>
-                    <IngredientEdit/>
-                    <IngredientEdit/>
+
+                    {recipe.ingredients.map((ingredient) => <IngredientEdit key={ingredient.id} ingredient={ingredient}/>)}
+
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
                             <button className={"btn btn-sm btn-primary"}>+ Add</button>

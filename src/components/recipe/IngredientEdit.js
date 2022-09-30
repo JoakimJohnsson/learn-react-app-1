@@ -1,15 +1,15 @@
 import React from "react";
 
 
-const IngredientEdit = () => {
+const IngredientEdit = ({ingredient}) => {
 
     return (
         <div className={"row"}>
             <div className={"col-12 col-sm-4"}>
-                <input className={"form-control"} type={"text"}/>
+                <input className={"form-control"} type={"text"} value={ingredient.name}/>
             </div>
             <div className={"col-12 col-sm-4"}>
-                <input className={"form-control"} type={"text"}/>
+                <input className={"form-control"} type={"text"} value={ingredient.amount}/>
             </div>
             <div className={"col-12 col-sm-4 text-end"}>
                 <button className={"btn btn-sm btn-outline-danger"}>&times; Delete</button>
