@@ -33,17 +33,14 @@ const RecipeEdit = ({modalId, showModal, setShowModal, recipe}) => {
                     <label className={"form-label"} htmlFor={"servings"}>Servings:</label>
                     <input className={"form-control mb-3"} type={"number"} min={"1"} name={"servings"} value={recipe.servings}/>
                     <label className={"form-label"}>Instructions:</label>
-                    <InstructionEdit/>
-                    <InstructionEdit/>
+                    {recipe.instructions.map((instruction, index) => <InstructionEdit key={index} instruction={instruction}/>)}
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
                             <button className={"btn btn-sm btn-primary"}>+ Add</button>
                         </div>
                     </div>
                     <label className={"form-label"}>Ingredients:</label>
-
                     {recipe.ingredients.map((ingredient) => <IngredientEdit key={ingredient.id} ingredient={ingredient}/>)}
-
                     <div className={"row"}>
                         <div className={"col-12 text-center"}>
                             <button className={"btn btn-sm btn-primary"}>+ Add</button>
