@@ -4,9 +4,9 @@ import React from "react";
 const InstructionList = ({instructions}) => {
 
     const instructionElements = instructions.map(
-        (instruction) => {
+        (instruction, index) => {
             return (
-                <li className={"list-group-item"}>{instruction}</li>
+                <li key={index} className={"list-group-item"}>{instruction}</li>
             );
         }
     )
