@@ -38,13 +38,13 @@ export const handleDeleteRecipe = (id, recipes, setRecipes) => {
 
 // ID of recipe to change. New recipe to replace an old one. Recipes state,
 // Remember - CHANGING state (recipes) is not possible in react.
-export const handleRecipeChange = (id, recipe, recipes, setRecipes) => {
+export const handleRecipeSubmit = (id, newRecipe, recipes, setRecipes) => {
     // Copy old recipes state. Make changes to the new one (mutate it). Then set it.
     const newRecipes = [...recipes];
     // Get index of the recipe we want to change.
-    const index = newRecipes.findIndex(r => r.id = id);
+    const index = newRecipes.findIndex(r => r.id === id);
     // Replace recipe.
-    newRecipes[index] = recipe;
+    newRecipes[index] = newRecipe;
     // Set new recipes state.
     setRecipes(newRecipes);
 }
